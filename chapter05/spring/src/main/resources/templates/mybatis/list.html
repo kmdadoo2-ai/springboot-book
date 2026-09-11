@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+    <h1>MyBatis 게시판</h1>
+
+    <p><a th:href="@{/mybatis/boards/new}">글쓰기</a></p>
+
+    <table border="1">
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+        </tr>
+        <tr th:each="board : ${boards}">
+            <td th:text="${board.id}">1</td>
+            <td>
+                <a th:href="@{/mybatis/boards/{id}(id=${board.id})}" th:text="${board.title}">제목</a>
+            </td>
+            <td th:text="${board.writer}">작성자</td>
+        </tr>
+    </table>
+</body>
+
+</html>

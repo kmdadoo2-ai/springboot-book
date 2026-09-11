@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>회원 등록 결과</title>
+</head>
+
+<body>
+    <h1>회원 등록 결과</h1>
+
+    <p>이름: <span th:text="${member.name}">이름</span></p>
+    <p>이메일: <span th:text="${member.email}">이메일</span></p>
+
+    <a th:href="@{/members/new}">다시 등록하기</a>
+</body>
+
+</html>

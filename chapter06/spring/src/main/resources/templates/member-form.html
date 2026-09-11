@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>회원 입력</title>
+</head>
+
+<body>
+    <h1>회원 입력</h1>
+
+    <form th:action="@{/members/new}" th:object="${memberForm}" method="post">
+        <p>
+            이름:
+            <input type="text" th:field="*{name}">
+            <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">이름 오류</span>
+        </p>
+        <p>
+            이메일:
+            <input type="email" th:field="*{email}">
+        </p>
+        <p>
+            비밀번호:
+            <input type="password" th:field="*{password}">
+            <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">비밀번호 오류</span>
+        </p>
+        <button type="submit">등록</button>
+    </form>
+</body>
+
+</html>

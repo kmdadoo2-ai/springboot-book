@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+    <h1>게시글 입력</h1>
+
+    <form th:action="${board.id == null} ? @{/boards} : @{/boards/{id}/edit(id=${board.id})}" th:object="${board}"
+        method="post">
+        <p>제목: <input type="text" th:field="*{title}"></p>
+        <p>작성자: <input type="text" th:field="*{writer}"></p>
+        <p>내용: <textarea th:field="*{content}"></textarea></p>
+        <button type="submit">저장</button>
+    </form>
+
+    <p><a th:href="@{/boards}">목록으로</a></p>
+</body>
+
+</html>

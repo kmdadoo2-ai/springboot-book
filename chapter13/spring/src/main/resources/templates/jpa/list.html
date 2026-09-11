@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/extras/spring-security"
+    th:replace="~{layout/base :: layout('게시글 목록', ~{::section})}">
+
+<section>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="h3 mb-1">게시글 목록</h1>
+            <p class="text-muted mb-0">검색과 페이징이 적용된 JPA 게시판입니다.</p>
+        </div>
+
+        <a sec:authorize="isAuthenticated()" class="btn btn-primary" th:href="@{/jpa/boards/new}">글쓰기</a>
+    </div>
+
+    <form th:action="@{/jpa/boards}" method="get" class="row g-2 mb-4">
+        <div class="col-sm-9 col-md-10">
+            <input type="text" name="keyword" class="form-control" placeholder="제목 검색" th:value="${keyword}">
+        </div>
+        <div class="col-sm-3 col-md-2 d-grid">
+            <button type="submit" class="btn btn-outline-primary">검색</button>
+        </div>
+    </form>
+
+    <div class="card border-0 shadow-sm">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th style="width: 90px;">번호</th>
+                        <th>제목</th>
+                        <th style="width: 140px;">작성자</th>
+                        <th style="width: 220px;">작성일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="board : ${boardPage.content}">
+                        <td class="text-muted" th:text="${board.id}">1</td>
+                        <td>
+                            <a class="fw-semibold text-decoration-none" th:href="@{/jpa/boards/{id}(id=${board.id})}"
+                                th:text="${board.title}">제목</a>
+                        </td>
+                        <td th:text="${board.writer}">작성자</td>
+                        <td class="text-muted" th:text="${board.createdAt}">작성일</td>
+                    </tr>
+
+                    <tr th:if="${boardPage.empty}">
+                        <td colspan="4" class="text-center text-muted py-5">
+                            게시글이 없습니다.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <nav th:if="${boardPage.totalPages > 0}" class="mt-4">
+        <ul class="pagination justify-content-center mb-2">
+            <li class="page-item" th:classappend="${boardPage.first} ? 'disabled'">
+                <a class="page-link"
+                    th:href="@{/jpa/boards(page=${boardPage.number - 1}, size=${boardPage.size}, keyword=${keyword})}">
+                    이전
+                </a>
+            </li>
+
+            <li class="page-item" th:each="pageNumber : ${#numbers.sequence(startPage, endPage)}"
+                th:classappend="${pageNumber == boardPage.number + 1} ? 'active'">
+                <a class="page-link"
+                    th:href="@{/jpa/boards(page=${pageNumber - 1}, size=${boardPage.size}, keyword=${keyword})}"
+                    th:text="${pageNumber}">1</a>
+            </li>
+
+            <li class="page-item" th:classappend="${boardPage.last} ? 'disabled'">
+                <a class="page-link"
+                    th:href="@{/jpa/boards(page=${boardPage.number + 1}, size=${boardPage.size}, keyword=${keyword})}">
+                    다음
+                </a>
+            </li>
+        </ul>
+
+        <p class="text-center text-muted small mb-0">
+            현재 페이지
+            <span th:text="${boardPage.number + 1}">1</span>
+            /
+            전체 페이지
+            <span th:text="${boardPage.totalPages}">1</span>
+        </p>
+    </nav>
+</section>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+    <h1>JPA 게시판</h1>
+
+    <p><a th:href="@{/jpa/boards/new}">글쓰기</a></p>
+
+    <table border="1">
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+        </tr>
+        <tr th:each="board : ${boards.content}">
+            <td th:text="${board.id}">1</td>
+            <td>
+                <a th:href="@{/jpa/boards/{id}(id=${board.id})}" th:text="${board.title}">제목</a>
+            </td>
+            <td th:text="${board.writer}">작성자</td>
+        </tr>
+    </table>
+
+    <p>
+        <a th:if="${boards.hasPrevious()}"
+            th:href="@{/jpa/boards(page=${boards.number - 1}, size=${boards.size})}">이전</a>
+
+        <span th:text="${boards.number + 1}">1</span>
+        /
+        <span th:text="${boards.totalPages}">1</span>
+
+        <a th:if="${boards.hasNext()}" th:href="@{/jpa/boards(page=${boards.number + 1}, size=${boards.size})}">다음</a>
+    </p>
+</body>
+
+</html>

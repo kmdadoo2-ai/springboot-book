@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+    <form th:action="@{/member/new}" th:object="${memberForm}" method="post">
+        <p>이름: <input type="text" th:field="*{name}"></p>
+        <p>이메일: <input type="email" th:field="*{email}"></p>
+        <button type="submit">등록</button>
+    </form>
+</body>
+
+</html>

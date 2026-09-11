@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" th:replace="~{layout/base :: layout('Firebase 실습', ~{::section})}">
+
+<body>
+    <section id="firebase-page" th:attr="data-csrf-url=@{/api/firebase/csrf}">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-4">
+            <h1 class="h3 mb-0">Firebase 실습</h1>
+            <a class="btn btn-outline-secondary" th:href="@{/jpa/boards}">게시판</a>
+        </div>
+
+        <form class="firebase-form border-bottom pb-3 mb-4" th:action="@{/api/firebase/status}" data-method="GET">
+            <button type="submit" class="btn btn-outline-success">상태 확인</button>
+        </form>
+
+        <div class="row g-4">
+            <div class="col-12 col-lg-6">
+                <h2 class="h5">Firestore 메시지 저장</h2>
+                <form id="message-form" class="firebase-form" th:action="@{/api/firebase/messages}" method="post"
+                    data-method="POST">
+                    <div class="mb-3">
+                        <label for="message-name" class="form-label">이름</label>
+                        <input id="message-name" name="name" class="form-control" maxlength="50" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message-body" class="form-label">메시지</label>
+                        <textarea id="message-body" name="message" class="form-control" rows="3" maxlength="1000"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success">저장</button>
+                </form>
+
+                <h2 class="h5 mt-4">Firestore 메시지 조회</h2>
+                <form class="firebase-form" th:action="@{/api/firebase/messages}" data-method="GET"
+                    data-path-field="id">
+                    <label for="document-id" class="form-label">문서 ID</label>
+                    <input id="document-id" name="id" class="form-control mb-3" pattern="[A-Za-z0-9]{20}" minlength="20"
+                        maxlength="20" required>
+                    <button type="submit" class="btn btn-outline-success">메시지 조회</button>
+                </form>
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <h2 class="h5">FCM 알림 전송</h2>
+                <form class="firebase-form" th:action="@{/api/firebase/fcm/send}" method="post" data-method="POST">
+                    <div class="mb-3">
+                        <label for="fcm-token" class="form-label">FCM 등록 FID</label>
+                        <textarea id="fcm-token" name="token" class="form-control" rows="2" maxlength="4096"
+                            autocomplete="off" required></textarea>
+                        <button type="button" id="issue-fcm-token" class="btn btn-outline-primary mt-2">
+                            이 브라우저 FCM 등록 및 FID 받기
+                        </button>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fcm-title" class="form-label">제목</label>
+                        <input id="fcm-title" name="title" class="form-control" maxlength="100" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fcm-body" class="form-label">본문</label>
+                        <textarea id="fcm-body" name="body" class="form-control" rows="3" maxlength="500"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">알림 전송</button>
+                </form>
+
+                <h2 class="h5 mt-4">Firebase 사용자 조회</h2>
+                <form class="firebase-form" th:action="@{/api/firebase/users}" data-method="GET" data-path-field="uid">
+                    <label for="firebase-uid" class="form-label">Firebase UID</label>
+                    <input id="firebase-uid" name="uid" class="form-control mb-3" maxlength="128" required>
+                    <button type="submit" class="btn btn-outline-primary">사용자 조회</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="border-top pt-4 mt-4">
+            <h2 class="h5">실행 결과</h2>
+            <p id="request-status" class="text-secondary" role="status" aria-live="polite">
+                대기 중
+            </p>
+            <pre id="request-result" class="bg-light border rounded p-3"
+                style="white-space: pre-wrap; overflow-wrap: anywhere; max-height: 24rem;" aria-label="요청 결과"></pre>
+            <a th:href="@{/login}" class="btn btn-outline-secondary">로그인 화면</a>
+        </div>
+
+        <script type="module" th:src="@{/js/firebase-admin.js}"></script>
+    </section>
+</body>
+
+</html>

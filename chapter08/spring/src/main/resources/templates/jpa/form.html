@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 입력</title>
+</head>
+
+<body>
+    <h1>게시글 입력</h1>
+
+    <form th:action="${boardId == null} ? @{/jpa/boards} : @{/jpa/boards/{id}/edit(id=${boardId})}"
+        th:object="${boardForm}" method="post">
+        <p>
+            제목:
+            <input type="text" th:field="*{title}">
+            <span th:errors="*{title}">제목 오류</span>
+        </p>
+        <p>
+            작성자:
+            <input type="text" th:field="*{writer}">
+            <span th:errors="*{writer}">작성자 오류</span>
+        </p>
+
+        <p>
+            내용:
+            <textarea th:field="*{content}"></textarea>
+            <span th:errors="*{content}">내용 오류</span>
+        </p>
+        <button type="submit">저장</button>
+    </form>
+
+    <p><a th:href="@{/jpa/boards}">목록으로</a></p>
+</body>
+
+</html>

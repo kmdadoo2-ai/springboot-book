@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JPA 게시판</title>
+</head>
+
+<body>
+    <h1>JPA 게시판</h1>
+
+    <form th:action="@{/jpa/boards}" method="get">
+        <input type="text" name="keyword" placeholder="제목 검색" th:value="${keyword}">
+        <button type="submit">검색</button>
+    </form>
+
+    <p>
+        <a th:href="@{/jpa/boards/new}">글쓰기</a>
+    </p>
+
+    <table border="1">
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>작성일</th>
+        </tr>
+
+        <tr th:each="board : ${boardPage.content}">
+            <td th:text="${board.id}">1</td>
+            <td>
+                <a th:href="@{/jpa/boards/{id}(id=${board.id})}" th:text="${board.title}">제목</a>
+            </td>
+            <td th:text="${board.writer}">작성자</td>
+            <td th:text="${board.createdAt}">작성일</td>
+        </tr>
+
+        <tr th:if="${boardPage.empty}">
+            <td colspan="4">게시글이 없습니다.</td>
+        </tr>
+    </table>
+
+    <div>
+        <a th:if="${boardPage.hasPrevious()}"
+            th:href="@{/jpa/boards(page=${boardPage.number - 1}, size=${boardPage.size}, keyword=${keyword})}">
+            이전
+        </a>
+
+        <span th:each="pageNumber : ${#numbers.sequence(startPage, endPage)}" th:if="${boardPage.totalPages > 0}">
+            <strong th:if="${pageNumber == boardPage.number + 1}" th:text="${pageNumber}">1</strong>
+
+            <a th:unless="${pageNumber == boardPage.number + 1}"
+                th:href="@{/jpa/boards(page=${pageNumber - 1}, size=${boardPage.size}, keyword=${keyword})}"
+                th:text="${pageNumber}">1</a>
+        </span>
+
+        <a th:if="${boardPage.hasNext()}"
+            th:href="@{/jpa/boards(page=${boardPage.number + 1}, size=${boardPage.size}, keyword=${keyword})}">
+            다음
+        </a>
+    </div>
+
+    <p>
+        현재 페이지:
+        <span th:text="${boardPage.number + 1}">1</span>
+        /
+        전체 페이지:
+        <span th:text="${boardPage.totalPages}">1</span>
+    </p>
+</body>
+
+</html>
