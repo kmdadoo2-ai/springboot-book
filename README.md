@@ -51,7 +51,7 @@
 | [chapter11/spring](chapter11/spring) | Bootstrap 공통 화면 |
 | [chapter12/spring](chapter12/spring) | Firebase와 관리자 웹 실습 |
 | [chapter13/spring](chapter13/spring) | WebJars, 외부 라이브러리, Jar와 Profile |
-| [chapter14/spring](chapter14/spring) | DB 변경, HTTPS와 요청 로그, Jar와 Profile |
+| [chapter14/spring](chapter14/spring) | DB 변경, HTTPS와 요청 로그 |
 
 처음 학습한다면 `chapter01`부터 진행하세요. 다음 실행 안내는 뒤쪽 장까지 반영된 **`chapter13/spring` 기준**입니다. 앞쪽 장은 해당 프로젝트의 설정 파일에 맞춰 실행 환경을 준비합니다.
 
