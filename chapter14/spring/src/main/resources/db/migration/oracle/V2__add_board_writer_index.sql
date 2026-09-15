@@ -1,0 +1,1 @@
+CREATE INDEX idx_board_writer_created ON board (writer, created_at);

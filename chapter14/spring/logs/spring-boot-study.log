@@ -1,0 +1,248 @@
+2026-09-14T18:20:19.670+09:00  INFO [requestId:] 27932 --- [spring-boot-study] [restartedMain] com.study.spring.Application             : Starting Application using Java 21 with PID 27932 (F:\DevData\SpringBoot\chapter14\spring\build\classes\java\main started by kmdadoo in F:\DevData\SpringBoot\chapter14\spring)
+2026-09-14T18:20:19.673+09:00  INFO [requestId:] 27932 --- [spring-boot-study] [restartedMain] com.study.spring.Application             : The following 1 profile is active: "prod"
+2026-09-14T18:20:19.723+09:00  INFO [requestId:] 27932 --- [spring-boot-study] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-14T18:20:19.723+09:00  INFO [requestId:] 27932 --- [spring-boot-study] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-14T18:20:20.571+09:00  INFO [requestId:] 27932 --- [spring-boot-study] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-14T18:20:20.633+09:00  INFO [requestId:] 27932 --- [spring-boot-study] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 2 JPA repository interfaces.
+2026-09-14T18:20:21.355+09:00  INFO [requestId:] 27932 --- [spring-boot-study] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-09-14T18:20:21.371+09:00  INFO [requestId:] 27932 --- [spring-boot-study] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-14T18:20:21.372+09:00  INFO [requestId:] 27932 --- [spring-boot-study] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-14T18:20:21.398+09:00  INFO [requestId:] 27932 --- [spring-boot-study] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1674 ms
+2026-09-14T18:20:21.753+09:00  INFO [requestId:] 27932 --- [spring-boot-study] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-14T18:20:22.946+09:00  WARN [requestId:] 27932 --- [spring-boot-study] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-12514: 데이터베이스에 접속할 수 없습니다. 서비스명 서비스가 host localhost port 1521의 리스너에 등록되지 않았습니다. (CONNECTION_ID=xwnrqTRyTLq/DoFHiFRE3A==)
+https://docs.oracle.com/error-help/db/ora-12514/
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08006
+Error Code : 12514
+Message    : ORA-12514: 데이터베이스에 접속할 수 없습니다. 서비스명 서비스가 host localhost port 1521의 리스너에 등록되지 않았습니다. (CONNECTION_ID=xwnrqTRyTLq/DoFHiFRE3A==)
+https://docs.oracle.com/error-help/db/ora-12514/
+
+2026-09-14T18:20:22.950+09:00  INFO [requestId:] 27932 --- [spring-boot-study] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-09-14T18:20:22.961+09:00  INFO [requestId:] 27932 --- [spring-boot-study] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-09-14T18:20:22.977+09:00 ERROR [requestId:] 27932 --- [spring-boot-study] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/hibernate/autoconfigure/HibernateJpaConfiguration.class]: Failed to initialize dependency 'flywayInitializer' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-12514: 데이터베이스에 접속할 수 없습니다. 서비스명 서비스가 host localhost port 1521의 리스너에 등록되지 않았습니다. (CONNECTION_ID=xwnrqTRyTLq/DoFHiFRE3A==)
+https://docs.oracle.com/error-help/db/ora-12514/
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08006
+Error Code : 12514
+Message    : ORA-12514: 데이터베이스에 접속할 수 없습니다. 서비스명 서비스가 host localhost port 1521의 리스너에 등록되지 않았습니다. (CONNECTION_ID=xwnrqTRyTLq/DoFHiFRE3A==)
+https://docs.oracle.com/error-help/db/ora-12514/
+
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977) ~[spring-context-7.0.9.jar:7.0.9]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.9.jar:7.0.9]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.1.1.jar:4.1.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.1.1.jar:4.1.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.1.1.jar:4.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.1.1.jar:4.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.1.1.jar:4.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.1.1.jar:4.1.1]
+	at com.study.spring.Application.main(Application.java:10) ~[main/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.1.1.jar:4.1.1]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: ORA-12514: 데이터베이스에 접속할 수 없습니다. 서비스명 서비스가 host localhost port 1521의 리스너에 등록되지 않았습니다. (CONNECTION_ID=xwnrqTRyTLq/DoFHiFRE3A==)
+https://docs.oracle.com/error-help/db/ora-12514/
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08006
+Error Code : 12514
+Message    : ORA-12514: 데이터베이스에 접속할 수 없습니다. 서비스명 서비스가 host localhost port 1521의 리스너에 등록되지 않았습니다. (CONNECTION_ID=xwnrqTRyTLq/DoFHiFRE3A==)
+https://docs.oracle.com/error-help/db/ora-12514/
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1815) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.9.jar:7.0.9]
+	... 13 common frames omitted
+Caused by: org.flywaydb.core.internal.exception.sqlExceptions.FlywaySqlUnableToConnectToDbException: Unable to obtain connection from database: ORA-12514: 데이터베이스에 접속할 수 없습니다. 서비스명 서비스가 host localhost port 1521의 리스너에 등록되지 않았습니다. (CONNECTION_ID=xwnrqTRyTLq/DoFHiFRE3A==)
+https://docs.oracle.com/error-help/db/ora-12514/
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : 08006
+Error Code : 12514
+Message    : ORA-12514: 데이터베이스에 접속할 수 없습니다. 서비스명 서비스가 host localhost port 1521의 리스너에 등록되지 않았습니다. (CONNECTION_ID=xwnrqTRyTLq/DoFHiFRE3A==)
+https://docs.oracle.com/error-help/db/ora-12514/
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:78) ~[flyway-core-12.4.0.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76) ~[flyway-core-12.4.0.jar:na]
+	at org.flywaydb.core.FlywayExecutor.init(FlywayExecutor.java:275) ~[flyway-core-12.4.0.jar:na]
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:120) ~[flyway-core-12.4.0.jar:na]
+	at org.flywaydb.core.Flyway.migrate(Flyway.java:181) ~[flyway-core-12.4.0.jar:na]
+	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.1.1.jar:4.1.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1811) ~[spring-beans-7.0.9.jar:7.0.9]
+	... 20 common frames omitted
+Caused by: java.sql.SQLRecoverableException: ORA-12514: 데이터베이스에 접속할 수 없습니다. 서비스명 서비스가 host localhost port 1521의 리스너에 등록되지 않았습니다. (CONNECTION_ID=xwnrqTRyTLq/DoFHiFRE3A==)
+https://docs.oracle.com/error-help/db/ora-12514/
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:2088) ~[ojdbc11-23.26.3.0.0.jar:23.26.3.0.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1319) ~[ojdbc11-23.26.3.0.0.jar:23.26.3.0.0]
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1250) ~[ojdbc11-23.26.3.0.0.jar:23.26.3.0.0]
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:107) ~[ojdbc11-23.26.3.0.0.jar:23.26.3.0.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:817) ~[ojdbc11-23.26.3.0.0.jar:23.26.3.0.0]
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:720) ~[ojdbc11-23.26.3.0.0.jar:23.26.3.0.0]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-7.0.2.jar:na]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar:na]
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:73) ~[flyway-core-12.4.0.jar:na]
+	... 27 common frames omitted
+Caused by: oracle.net.ns.NetException: ORA-12514: 데이터베이스에 접속할 수 없습니다. 서비스명 서비스가 host localhost port 1521의 리스너에 등록되지 않았습니다. (CONNECTION_ID=xwnrqTRyTLq/DoFHiFRE3A==)
+https://docs.oracle.com/error-help/db/ora-12514/
+	at oracle.net.ns.NSProtocolNIO.createRefusePacketException(NSProtocolNIO.java:960) ~[ojdbc11-23.26.3.0.0.jar:23.26.3.0.0]
+	at oracle.net.ns.NSProtocolNIO.handleConnectPacketResponse(NSProtocolNIO.java:499) ~[ojdbc11-23.26.3.0.0.jar:23.26.3.0.0]
+	at oracle.net.ns.NSProtocolNIO.negotiateConnection(NSProtocolNIO.java:289) ~[ojdbc11-23.26.3.0.0.jar:23.26.3.0.0]
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:374) ~[ojdbc11-23.26.3.0.0.jar:23.26.3.0.0]
+	at oracle.jdbc.driver.T4CConnection.connectNetworkSessionProtocol(T4CConnection.java:3998) ~[ojdbc11-23.26.3.0.0.jar:23.26.3.0.0]
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:1201) ~[ojdbc11-23.26.3.0.0.jar:23.26.3.0.0]
+	... 39 common frames omitted
+
+2026-09-14T18:21:05.641+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] com.study.spring.Application             : Starting Application using Java 21 with PID 10768 (F:\DevData\SpringBoot\chapter14\spring\build\classes\java\main started by kmdadoo in F:\DevData\SpringBoot\chapter14\spring)
+2026-09-14T18:21:05.647+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] com.study.spring.Application             : The following 1 profile is active: "prod"
+2026-09-14T18:21:05.689+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-14T18:21:05.689+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-14T18:21:06.297+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-14T18:21:06.335+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 2 JPA repository interfaces.
+2026-09-14T18:21:06.885+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-09-14T18:21:06.917+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-14T18:21:06.917+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-14T18:21:06.939+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1250 ms
+2026-09-14T18:21:07.254+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-14T18:21:07.584+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@5df58be2
+2026-09-14T18:21:07.584+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-14T18:21:07.600+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:oracle:thin:@//localhost:1521/xe (Oracle 21.3)
+2026-09-14T18:21:07.805+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.026s)
+2026-09-14T18:21:07.855+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "SPRING_FLYWAY": 2
+2026-09-14T18:21:07.855+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "SPRING_FLYWAY" is up to date. No migration necessary.
+2026-09-14T18:21:07.940+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-14T18:21:07.973+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-09-14T18:21:08.388+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-14T18:21:08.480+09:00  WARN [requestId:] 10768 --- [spring-boot-study] [restartedMain] org.hibernate.orm.jdbc                   : HHH100123: Low default JDBC fetch size: 10 (consider setting 'hibernate.jdbc.fetch_size')
+2026-09-14T18:21:08.483+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:oracle:thin:@//localhost:1521/xe]
+	Database driver: Oracle JDBC driver
+	Database dialect: OracleDialect
+	Database version: 21.3
+	Default catalog/schema: undefined/SPRING_FLYWAY
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 10
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-14T18:21:09.292+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-14T18:21:09.406+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-14T18:21:09.475+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-14T18:21:09.690+09:00  WARN [requestId:] 10768 --- [spring-boot-study] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-14T18:21:09.764+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name siteUserDetailsService
+2026-09-14T18:21:10.211+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-09-14T18:21:10.216+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [restartedMain] com.study.spring.Application             : Started Application in 4.979 seconds (process running for 5.357)
+2026-09-14T18:21:17.388+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-14T18:21:17.388+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-14T18:21:17.389+09:00  INFO [requestId:] 10768 --- [spring-boot-study] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-09-14T18:31:43.481+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] com.study.spring.Application             : Starting Application using Java 21 with PID 17784 (F:\DevData\SpringBoot\chapter14\spring\build\classes\java\main started by kmdadoo in F:\DevData\SpringBoot\chapter14\spring)
+2026-09-14T18:31:43.484+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] com.study.spring.Application             : The following 1 profile is active: "prod"
+2026-09-14T18:31:43.515+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-14T18:31:43.515+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-14T18:31:44.126+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-14T18:31:44.177+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 2 JPA repository interfaces.
+2026-09-14T18:31:44.743+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-09-14T18:31:44.750+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-14T18:31:44.750+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-14T18:31:44.782+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1267 ms
+2026-09-14T18:31:45.129+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-14T18:31:45.513+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@5c1a6dae
+2026-09-14T18:31:45.515+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-14T18:31:45.525+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:oracle:thin:@//localhost:1521/xe (Oracle 21.3)
+2026-09-14T18:31:45.745+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.033s)
+2026-09-14T18:31:45.764+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "SPRING_FLYWAY": 2
+2026-09-14T18:31:45.769+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "SPRING_FLYWAY" is up to date. No migration necessary.
+2026-09-14T18:31:45.868+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-14T18:31:45.918+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-09-14T18:31:46.364+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-14T18:31:46.440+09:00  WARN [requestId:] 17784 --- [spring-boot-study] [restartedMain] org.hibernate.orm.jdbc                   : HHH100123: Low default JDBC fetch size: 10 (consider setting 'hibernate.jdbc.fetch_size')
+2026-09-14T18:31:46.445+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:oracle:thin:@//localhost:1521/xe]
+	Database driver: Oracle JDBC driver
+	Database dialect: OracleDialect
+	Database version: 21.3
+	Default catalog/schema: undefined/SPRING_FLYWAY
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 10
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-14T18:31:47.209+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-14T18:31:47.304+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-14T18:31:47.375+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-14T18:31:47.552+09:00  WARN [requestId:] 17784 --- [spring-boot-study] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-14T18:31:47.633+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name siteUserDetailsService
+2026-09-14T18:31:48.079+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-09-14T18:31:48.083+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [restartedMain] com.study.spring.Application             : Started Application in 5.018 seconds (process running for 5.449)
+2026-09-14T18:32:21.820+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-14T18:32:21.820+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-14T18:32:21.822+09:00  INFO [requestId:] 17784 --- [spring-boot-study] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-09-14T18:32:22.444+09:00  INFO [requestId:04aac0b8-957d-4499-bfcd-afc3c2fd5849] 17784 --- [spring-boot-study] [http-nio-8080-exec-1] com.study.spring.ops.RequestLogFilter    : http method=GET status=200 elapsedMs=618
+2026-09-14T18:32:22.475+09:00  INFO [requestId:fa9f1309-a40f-42fd-8cdc-ee3a941ef8be] 17784 --- [spring-boot-study] [http-nio-8080-exec-4] com.study.spring.ops.RequestLogFilter    : http method=GET status=200 elapsedMs=19
+2026-09-14T18:32:22.477+09:00  INFO [requestId:35506b99-5a01-44fd-8be2-72de05d6c5da] 17784 --- [spring-boot-study] [http-nio-8080-exec-3] com.study.spring.ops.RequestLogFilter    : http method=GET status=200 elapsedMs=23
+2026-09-14T18:32:22.545+09:00  INFO [requestId:10012972-c79e-4c11-889b-aef384512bcb] 17784 --- [spring-boot-study] [http-nio-8080-exec-6] com.study.spring.ops.RequestLogFilter    : http method=GET status=200 elapsedMs=25
+2026-09-14T18:32:22.557+09:00  INFO [requestId:800dc310-48cf-4e56-96e8-17b27f0eb266] 17784 --- [spring-boot-study] [http-nio-8080-exec-5] com.study.spring.ops.RequestLogFilter    : http method=GET status=200 elapsedMs=36
+2026-09-14T18:32:23.079+09:00  INFO [requestId:f15517da-daa9-4006-95bc-c2ea88d908c5] 17784 --- [spring-boot-study] [http-nio-8080-exec-2] com.study.spring.ops.RequestLogFilter    : http method=GET status=404 elapsedMs=599
+2026-09-14T18:32:24.291+09:00  INFO [requestId:91a14e55-5c52-41dd-91f4-d73c4a3e3895] 17784 --- [spring-boot-study] [http-nio-8080-exec-7] com.study.spring.ops.RequestLogFilter    : http method=GET status=200 elapsedMs=4
+2026-09-14T18:56:58.285+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] com.study.spring.Application             : Starting Application using Java 21 with PID 19284 (F:\DevData\SpringBoot\chapter14\spring\build\classes\java\main started by kmdadoo in F:\DevData\SpringBoot\chapter14\spring)
+2026-09-14T18:56:58.287+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] com.study.spring.Application             : The following 1 profile is active: "prod"
+2026-09-14T18:56:58.325+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-14T18:56:58.325+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-14T18:56:58.943+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-14T18:56:58.991+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36 ms. Found 2 JPA repository interfaces.
+2026-09-14T18:56:59.615+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-09-14T18:56:59.639+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-14T18:56:59.644+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-14T18:56:59.659+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1334 ms
+2026-09-14T18:56:59.999+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-14T18:57:00.304+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@5c1a6dae
+2026-09-14T18:57:00.306+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-14T18:57:00.317+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] org.flywaydb.core.FlywayExecutor         : Database: jdbc:oracle:thin:@//localhost:1521/xe (Oracle 21.3)
+2026-09-14T18:57:00.566+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.029s)
+2026-09-14T18:57:00.582+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] o.f.core.internal.command.DbMigrate      : Current version of schema "SPRING_FLYWAY": 2
+2026-09-14T18:57:00.588+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] o.f.core.internal.command.DbMigrate      : Schema "SPRING_FLYWAY" is up to date. No migration necessary.
+2026-09-14T18:57:00.670+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-09-14T18:57:00.717+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-09-14T18:57:01.221+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-14T18:57:01.396+09:00  WARN [requestId:] 19284 --- [spring-boot-study] [restartedMain] org.hibernate.orm.jdbc                   : HHH100123: Low default JDBC fetch size: 10 (consider setting 'hibernate.jdbc.fetch_size')
+2026-09-14T18:57:01.401+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:oracle:thin:@//localhost:1521/xe]
+	Database driver: Oracle JDBC driver
+	Database dialect: OracleDialect
+	Database version: 21.3
+	Default catalog/schema: undefined/SPRING_FLYWAY
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 10
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-14T18:57:02.317+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-14T18:57:02.427+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-14T18:57:02.504+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-14T18:57:02.721+09:00  WARN [requestId:] 19284 --- [spring-boot-study] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-14T18:57:02.811+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name siteUserDetailsService
+2026-09-14T18:57:03.358+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-09-14T18:57:03.368+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [restartedMain] com.study.spring.Application             : Started Application in 5.474 seconds (process running for 5.881)
+2026-09-14T18:57:11.946+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-14T18:57:11.946+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-14T18:57:11.949+09:00  INFO [requestId:] 19284 --- [spring-boot-study] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-09-14T18:57:12.350+09:00  INFO [requestId:697b8c42-2a1a-45f0-a010-6a0d26b7f242] 19284 --- [spring-boot-study] [http-nio-8080-exec-1] com.study.spring.ops.RequestLogFilter    : http method=GET status=200 elapsedMs=397
+2026-09-14T18:57:17.611+09:00  INFO [requestId:d809c0b0-938b-4dd7-bd52-6cdd5d1c3f53] 19284 --- [spring-boot-study] [http-nio-8080-exec-2] com.study.spring.ops.RequestLogFilter    : http method=GET status=200 elapsedMs=10
+2026-09-14T18:57:33.724+09:00  INFO [requestId:5cc657b1-ed03-47ea-995e-4eec0a32c710] 19284 --- [spring-boot-study] [http-nio-8080-exec-4] com.study.spring.ops.RequestLogFilter    : http method=GET status=200 elapsedMs=9
+2026-09-14T18:57:43.738+09:00  INFO [requestId:9a4d4352-6819-4fce-a51a-3bb81943ab13] 19284 --- [spring-boot-study] [http-nio-8080-exec-5] com.study.spring.ops.RequestLogFilter    : http method=GET status=200 elapsedMs=22
