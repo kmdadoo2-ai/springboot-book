@@ -7,7 +7,7 @@ import { getMessaging, register, onRegistered } from "https://www.gstatic.com/fi
     if (!page) return;
 
     const firebaseConfig = {
-        apiKey: "AIzaSyBL76SbtdZG92qdTsfQtkPGpgCfIiiZZRM",
+        apiKey: "FirebaseAPI-key",
         authDomain: "springboot-book-b8c94.firebaseapp.com",
         databaseURL: "https://springboot-book-b8c94-default-rtdb.asia-southeast1.firebasedatabase.app",
         projectId: "springboot-book-b8c94",
